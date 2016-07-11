@@ -39,7 +39,7 @@ func(f *Fcm)Init (auth string ,to string ,title string ,body string,data []byte)
 
 	return
 }
-func (f Fcm)SendNotif()(err error,res []byte){
+func (f Fcm)SendNotif()(err error,resi []byte){
 	if(f.auth==""){
 		err=errors.New("App not Initialized properly");
 
@@ -71,7 +71,7 @@ func (f Fcm)SendNotif()(err error,res []byte){
 			if err3 != nil {
 				panic(err.Error())
 			} else{
-				res=[]byte( ret);}
+				resi=[]byte( ret);}
 		}else{
 
 			r, err3 := getRes2([]byte(body))
@@ -82,9 +82,9 @@ func (f Fcm)SendNotif()(err error,res []byte){
 				ret, err3 := json.Marshal(r)
 				if err3 != nil {
 					panic(err.Error())
-				} else{res=[]byte( ret);}
+				} else{resi=[]byte( ret);}
 			}else{
-   res=[]byte(`{error:"Something went Wrong"}`);
+   resi=[]byte(`{error:"Something went Wrong"}`);
 }
 		}
 
