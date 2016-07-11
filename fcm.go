@@ -62,7 +62,7 @@ func (f Fcm)SendNotif()(err error,resi []byte){
 			panic(err.Error())
 		}
 		if(strings.HasPrefix((strings.ToLower(f.to)),"/topics/")){
-
+                           fmt.Println(body)
 			r, err3 := getRes1([]byte(body))
 			if err3 != nil {
 				panic(err.Error())
