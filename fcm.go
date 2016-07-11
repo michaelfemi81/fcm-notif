@@ -46,7 +46,9 @@ func (f Fcm)SendNotif()(err error,resi []byte){
 	}else{
 
 		url := "https://gcm-http.googleapis.com/gcm/send"
-
+                if(strings.HasPrefix(f.to,"key=")){
+			strings.Replace(f.to,"key=","",1)
+		}
 		payload := strings.NewReader("{\n  \"to\":\""+f.to+"\",\n  \"data\": \n"+string(f.data)+",\n   \"notification\": {\n        \"title\":\""+f.title+"\",\n        \"body\": \""+f.body+"\"\n    }\n}")
 
 		req, _ := http.NewRequest("POST", url, payload)
