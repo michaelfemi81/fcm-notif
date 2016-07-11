@@ -78,7 +78,7 @@ func (f Fcm)SendNotif()(err error,resi []byte){
 			if err3 != nil {
 				panic(err.Error())
 			}
-			if(r.Success>1&&r.Failure<=0){
+			if(r.Success>=1&&r.Failure<=0){
 				ret, err3 := json.Marshal(r)
 				if err3 != nil {
 					panic(err.Error())
