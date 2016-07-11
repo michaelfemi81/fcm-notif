@@ -20,10 +20,10 @@ type Response1 struct{
 }
 
 type Res struct{
-	MessageId uint64 `json:"message_id"`
+	MessageId string `json:"message_id"`
 }
 type Response2 struct{
-MultiCast string `json:"multicast_id"`
+MultiCast uint64 `json:"multicast_id"`
 Success int `json:"success"`
 Failure int `json:"failure"`
 CanonicalIds int `json:"canonical_ids"`
