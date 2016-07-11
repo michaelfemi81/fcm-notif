@@ -16,7 +16,7 @@ type Fcm struct{
 
 }
 type Response1 struct{
-	Mid string `json:"message_id"`
+	Mid uint64 `json:"message_id"`
 }
 
 type Res struct{
